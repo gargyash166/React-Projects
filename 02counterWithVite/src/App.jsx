@@ -14,7 +14,7 @@ function App() {
    
   const  addValue = () => {
   //  console.log("Value Added ",  Math.random()); // for check the funtion is working or not
-  if(counter < 30 ){ 
+  if(counter < 20 ){ 
   console.log("Clicked",  );
   counter = counter + 1;
   setCounter(counter)

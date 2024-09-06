@@ -14,16 +14,18 @@ function App() {
    
   const  addValue = () => {
   //  console.log("Value Added ",  Math.random()); // for check the funtion is working or not
-   console.log("Clicked",  );
+  if(counter < 30 ){ 
+  console.log("Clicked",  );
   counter = counter + 1;
   setCounter(counter)
-
+  }
   }
   const removeValue = () =>{
+    if(counter>0){
     console.log("Clicked"); 
        // counter = counter -1;
    setCounter(counter - 1)
-  }
+  }}
   return (
    <>
    <h1>Chai or React</h1>

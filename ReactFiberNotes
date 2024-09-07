@@ -1,0 +1,34 @@
+React Fiber’s architecture introduces several key concepts and structures to enhance the efficiency and flexibility of React’s rendering process.
+
+1. Fiber Nodes
+Fiber Nodes: Each component in your React application is represented by a Fiber node. A Fiber node is a data structure that contains information about the component, such as its type, state, and its position in the component tree.
+2. Fiber Tree
+Fiber Tree: This is a hierarchical structure of Fiber nodes that mirrors the component tree of your application. Each node in this tree corresponds to a React component and holds information about its current state, effects, and other metadata.
+3. Work Units and Scheduling
+Work Units: React Fiber divides the rendering work into smaller units or tasks. This allows React to perform work incrementally, breaking down complex updates into smaller chunks that can be processed in multiple frames.
+
+Scheduling: Fiber introduces a priority-based scheduling system. It allows React to prioritize tasks based on their importance. High-priority tasks (e.g., user interactions) are processed first, while lower-priority tasks (e.g., background updates) are handled later.
+
+4. Reconciliation
+Reconciliation: This is the process of updating the Fiber tree to reflect changes in the component state. Fiber improves this process by making it incremental and interruptible. Instead of performing a full reconciliation in one go, Fiber can pause and resume work, allowing it to handle updates more efficiently.
+5. Update Process
+Fiber Nodes: Each Fiber node maintains pointers to its parent, child, and sibling nodes. This structure helps in efficiently traversing and updating the tree.
+
+Pending Work: Fiber nodes can have pending work associated with them. When updates occur, React marks these nodes as needing work. The work is then scheduled and processed based on its priority.
+
+6. Effects
+Effect List: After processing updates, Fiber maintains an effect list for each node. This list records what changes need to be made to the DOM or other side effects (e.g., running callbacks).
+
+Commit Phase: During the commit phase, React applies these effects to the actual DOM, ensuring that the user interface reflects the most recent state.
+
+7. Fiber Scheduler
+Scheduler: The Fiber scheduler is responsible for managing and prioritizing work. It uses a priority queue to determine which tasks should be executed first, based on their importance and urgency.
+8. Interruptibility and Pausing
+Interruptibility: One of the key features of Fiber is its ability to pause and resume work. If a high-priority update comes in (like a user typing in a text box), React can pause lower-priority updates (like background animations) and process the high-priority tasks first.
+9. Context and Hooks
+Context: React Fiber supports React’s Context API, allowing components to share data without passing props through every level of the tree.
+
+Hooks: The architecture of Fiber also supports React Hooks, which provide a way to use state and other React features without writing class-based components.
+
+Summary
+In essence, React Fiber introduces a more granular and flexible architecture for managing updates and rendering. It enhances performance by breaking down work into manageable units, prioritizing tasks, and allowing for interruptibility. This leads to a smoother and more responsive user experience, especially in complex applications.

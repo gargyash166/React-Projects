@@ -17,7 +17,8 @@ function App() {
   
 </>
 // agar hum {} ke under kuch likhte h tag k under tho ko ek variablr ki trf treat hoga exple username (evaluted expression- only final outcome) (ExampleofVariable)
-
+// kuki hume username ki value pass kr de h upr tho vo vhi s le lga bs {usename} likh kar
+// iss s hmri coding easy understanding hoti h agr ek he chz br br print karni tho simple hum asse variable bna kr skte  hai
   )
 }
 
